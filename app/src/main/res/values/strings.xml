@@ -1,3 +1,93 @@
 <resources>
     <string name="app_name">30Days</string>
+
+    <string name="PushUps">Push-ups</string>
+    <string name="PushUps_description">A basic upper-body exercise that targets the chest, shoulders, and triceps.</string>
+
+    <string name="Squats">Squats</string>
+    <string name="Squats_description">A foundational leg exercise that works the quads, hamstrings, and glutes.</string>
+
+    <string name="Plank">Plank</string>
+    <string name="Plank_description">A core-strengthening exercise that also engages the arms and shoulders.</string>
+
+    <string name="Lunges">Lunges</string>
+    <string name="Lunges_description">A lower-body exercise that enhances stability and targets the legs and glutes.</string>
+
+    <string name="MountainClimbers">Mountain Climbers</string>
+    <string name="MountainClimbers_description">A dynamic cardio move that strengthens the core and improves agility.</string>
+
+    <string name="Burpees">Burpees</string>
+    <string name="Burpees_description">A full-body exercise that boosts cardiovascular endurance and strength.</string>
+
+    <string name="JumpingJacks">Jumping Jacks</string>
+    <string name="JumpingJacks_description">A cardio exercise that increases heart rate and warms up the body.</string>
+
+    <string name="SitUps">Sit-ups</string>
+    <string name="SitUps_description">A core exercise that strengthens abdominal muscles and enhances stability.</string>
+
+    <string name="BicycleCrunches">Bicycle Crunches</string>
+    <string name="BicycleCrunches_description">A core move that targets the abs and obliques with a twisting motion.</string>
+
+    <string name="HighKnees">High Knees</string>
+    <string name="HighKnees_description">A cardio exercise that increases heart rate and strengthens the legs.</string>
+
+    <string name="TricepDips">Tricep Dips</string>
+    <string name="TricepDips_description">An upper-body exercise that targets the triceps and shoulders.</string>
+
+    <string name="LegRaises">Leg Raises</string>
+    <string name="LegRaises_description">A core exercise that focuses on the lower abs and improves stability.</string>
+
+    <string name="RussianTwists">Russian Twists</string>
+    <string name="RussianTwists_description">A twisting exercise that targets the obliques and core muscles.</string>
+
+    <string name="WallSit">Wall Sit</string>
+    <string name="WallSit_description">A static exercise that strengthens the legs and glutes through endurance.</string>
+
+    <string name="GluteBridge">Glute Bridge</string>
+    <string name="GluteBridge_description">A lower-body move that strengthens the glutes, hamstrings, and core.</string>
+
+    <string name="SidePlank">Side Plank</string>
+    <string name="SidePlank_description">A core exercise that targets the obliques and improves stability.</string>
+
+    <string name="CalfRaises">Calf Raises</string>
+    <string name="CalfRaises_description">An exercise that strengthens the calf muscles, improving balance.</string>
+
+    <string name="ArmCircles">Arm Circles</string>
+    <string name="ArmCircles_description">A warm-up exercise that loosens the shoulders and improves arm mobility.</string>
+
+    <string name="Superman">Superman</string>
+    <string name="Superman_description">A back exercise that strengthens the lower back, glutes, and core.</string>
+
+    <string name="ReverseLunges">Reverse Lunges</string>
+    <string name="ReverseLunges_description">A lower-body move that targets the glutes and hamstrings, improving balance.</string>
+
+    <string name="ButtKicks">Butt Kicks</string>
+    <string name="ButtKicks_description">A cardio exercise that increases heart rate and warms up the legs.</string>
+
+    <string name="Climbers">Climbers</string>
+    <string name="Climbers_description">A cardio move that strengthens the core and improves agility and endurance.</string>
+
+    <string name="Inchworm">Inchworm</string>
+    <string name="Inchworm_description">A full-body warm-up exercise that stretches the hamstrings and core.</string>
+
+    <string name="HipThrust">Hip Thrust</string>
+    <string name="HipThrust_description">An exercise that targets the glutes and hamstrings, enhancing hip mobility.</string>
+
+    <string name="BoxJumps">Box Jumps</string>
+    <string name="BoxJumps_description">A plyometric move that improves leg power and cardiovascular fitness.</string>
+
+    <string name="StepUps">Step-Ups</string>
+    <string name="StepUps_description">A lower-body exercise that strengthens the legs and enhances balance.</string>
+
+    <string name="DonkeyKicks">Donkey Kicks</string>
+    <string name="DonkeyKicks_description">A glute-targeting move that improves lower body strength and stability.</string>
+
+    <string name="Windmills">Windmills</string>
+    <string name="Windmills_description">A core exercise that improves oblique strength and spinal mobility.</string>
+
+    <string name="BearCrawl">Bear Crawl</string>
+    <string name="BearCrawl_description">A full-body exercise that engages the core, shoulders, and legs.</string>
+
+    <string name="VUps">V-Ups</string>
+    <string name="VUps_description">A challenging core exercise that targets the abs and improves flexibility.</string>
 </resources>
