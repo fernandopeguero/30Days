@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">30Days</string>
 
+    <string name="day">Day %s</string>
+
     <string name="PushUps">Push-ups</string>
     <string name="PushUps_description">A basic upper-body exercise that targets the chest, shoulders, and triceps.</string>
 
