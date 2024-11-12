@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.a30days.screens.ExerciseApp
 import com.example.a30days.ui.theme._30DaysTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +21,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             _30DaysTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                   ExerciseApp(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     _30DaysTheme {
-        Greeting("Android")
+       ExerciseApp()
     }
 }
