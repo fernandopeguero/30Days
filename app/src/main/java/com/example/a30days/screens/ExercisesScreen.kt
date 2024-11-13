@@ -81,7 +81,8 @@ fun ExerciseList(exercises: List<Exercise>, modifier: Modifier = Modifier) {
         modifier = modifier
     ){
 
-        items(exercises) {
+        items(
+            exercises) {
             ExerciseCard(
                 it,
                 modifier = Modifier
