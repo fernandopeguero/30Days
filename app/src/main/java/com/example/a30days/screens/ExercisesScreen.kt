@@ -12,8 +12,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
+import androidx.compose.material.icons.materialIcon
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -42,7 +44,10 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
             )
         ) {
             Row {
-                Text(text = stringResource(R.string.day, exercise.day))
+                Text(
+                    text = stringResource(R.string.day, exercise.day),
+                    style = MaterialTheme.typography.titleLarge
+                )
                 Spacer(modifier = Modifier.weight(1f))
                 Icon(
                     imageVector = Icons.Default.ArrowDropDown,
@@ -50,7 +55,11 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
                 )
             }
             Text(
-                text = stringResource(exercise.name)
+                text = stringResource(exercise.name),
+                style = MaterialTheme.typography.titleSmall,
+                modifier = Modifier.padding(
+                    top = dimensionResource(R.dimen.padding_small),
+                    bottom = dimensionResource(R.dimen.padding_small))
             )
 
             Image(
@@ -66,7 +75,8 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
                 modifier.padding(8.dp)
             )
             Text(
-                text = stringResource(exercise.description)
+                text = stringResource(exercise.description),
+                style = MaterialTheme.typography.bodyMedium
             )
         }
     }
