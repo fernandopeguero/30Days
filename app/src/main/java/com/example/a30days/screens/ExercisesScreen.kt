@@ -5,9 +5,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Card
@@ -15,7 +17,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,9 +34,13 @@ import com.example.a30days.ui.theme._30DaysTheme
 fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
 
     Card (
-        modifier = modifier
+        modifier = modifier.padding(8.dp)
     ){
-        Column {
+        Column(
+            modifier = Modifier.padding(
+                dimensionResource(R.dimen.padding_small)
+            )
+        ) {
             Row {
                 Text(text = stringResource(R.string.day, exercise.day))
                 Spacer(modifier = Modifier.weight(1f))
@@ -48,10 +56,15 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
             Image(
                 painter = painterResource(exercise.imgUrl),
                 contentDescription = stringResource( exercise.name),
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.sizeIn(maxHeight = 250.dp).fillMaxWidth()
+                contentScale = ContentScale.Crop, 
+                modifier = Modifier
+                    .sizeIn(maxHeight = 250.dp)
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(dimensionResource(R.dimen.padding_small)))
             )
-
+            Spacer(
+                modifier.padding(8.dp)
+            )
             Text(
                 text = stringResource(exercise.description)
             )
@@ -64,7 +77,9 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
 fun ExerciseList(exercises: List<Exercise>, modifier: Modifier = Modifier) {
 
 
-    LazyColumn {
+    LazyColumn(
+        modifier = modifier
+    ){
 
         items(exercises) {
             ExerciseCard(
@@ -89,8 +104,6 @@ fun ExerciseApp(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewExercise() {
-
-    val day = DataRepository.exercises
     _30DaysTheme {
         ExerciseApp()
     }
