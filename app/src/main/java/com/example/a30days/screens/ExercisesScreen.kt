@@ -18,6 +18,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -34,8 +38,12 @@ import com.example.a30days.ui.theme._30DaysTheme
 
 @Composable
 fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
+    var expanded by remember { mutableStateOf(false) }
 
     Card (
+        onClick = {
+            expanded = !expanded
+        },
         modifier = modifier.padding(8.dp)
     ){
         Column(
@@ -51,7 +59,7 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
                 Spacer(modifier = Modifier.weight(1f))
                 Icon(
                     imageVector = Icons.Default.ArrowDropDown,
-                    contentDescription = null
+                    contentDescription = null,
                 )
             }
             Text(
@@ -71,16 +79,32 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(dimensionResource(R.dimen.padding_small)))
             )
-            Spacer(
-                modifier.padding(8.dp)
-            )
-            Text(
-                text = stringResource(exercise.description),
-                style = MaterialTheme.typography.bodyMedium
-            )
+
+            if(expanded){
+                ExerciseDescription(stringResource(exercise.description))
+            }
+
         }
     }
 
+}
+
+
+@Composable
+fun ExerciseDescription(description: String , modifier: Modifier = Modifier) {
+    Spacer(
+        modifier.padding(8.dp)
+    )
+    Text(
+        text = "Description"
+    )
+    Spacer(
+        modifier = Modifier.padding(8.dp)
+    )
+    Text(
+        text = description,
+        style = MaterialTheme.typography.bodyMedium
+    )
 }
 
 @Composable
