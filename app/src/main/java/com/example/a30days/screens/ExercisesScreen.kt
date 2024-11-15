@@ -1,5 +1,8 @@
 package com.example.a30days.screens
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,8 +14,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowDropDown
-import androidx.compose.material.icons.materialIcon
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -44,11 +47,16 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
         onClick = {
             expanded = !expanded
         },
-        modifier = modifier.padding(8.dp)
+        modifier = modifier.animateContentSize(
+            animationSpec = spring(
+                dampingRatio = Spring.DampingRatioNoBouncy,
+                stiffness = Spring.StiffnessLow
+            )
+        )
     ){
         Column(
             modifier = Modifier.padding(
-                dimensionResource(R.dimen.padding_small)
+                dimensionResource(R.dimen.padding_medium)
             )
         ) {
             Row {
@@ -58,7 +66,7 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
                 )
                 Spacer(modifier = Modifier.weight(1f))
                 Icon(
-                    imageVector = Icons.Default.ArrowDropDown,
+                    imageVector = if (expanded) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
                     contentDescription = null,
                 )
             }
@@ -119,7 +127,7 @@ fun ExerciseList(exercises: List<Exercise>, modifier: Modifier = Modifier) {
             exercises) {
             ExerciseCard(
                 it,
-                modifier = Modifier
+                modifier = Modifier.padding(8.dp)
             )
         }
     }
