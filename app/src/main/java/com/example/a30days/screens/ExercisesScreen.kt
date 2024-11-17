@@ -31,6 +31,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a30days.R
@@ -62,9 +63,10 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
             Row {
                 Text(
                     text = stringResource(R.string.day, exercise.day),
-                    style = MaterialTheme.typography.titleLarge
+                    style = MaterialTheme.typography.titleLarge,
+                    modifier = Modifier
                 )
-                Spacer(modifier = Modifier.weight(1f))
+                Spacer(modifier = Modifier.weight(.5f))
                 Icon(
                     imageVector = if (expanded) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
                     contentDescription = null,
@@ -72,7 +74,8 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
             }
             Text(
                 text = stringResource(exercise.name),
-                style = MaterialTheme.typography.titleSmall,
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(
                     top = dimensionResource(R.dimen.padding_small),
                     bottom = dimensionResource(R.dimen.padding_small))
@@ -100,19 +103,24 @@ fun ExerciseCard(exercise:Exercise, modifier: Modifier = Modifier) {
 
 @Composable
 fun ExerciseDescription(description: String , modifier: Modifier = Modifier) {
-    Spacer(
-        modifier.padding(8.dp)
-    )
-    Text(
-        text = "Description"
-    )
-    Spacer(
-        modifier = Modifier.padding(8.dp)
-    )
-    Text(
-        text = description,
-        style = MaterialTheme.typography.bodyMedium
-    )
+    Column (
+        modifier = modifier
+    ) {
+        Spacer(
+            modifier.padding(8.dp)
+        )
+        Text(
+            text = "Description"
+        )
+        Spacer(
+            modifier = Modifier.padding(4.dp)
+        )
+        Text(
+            text = description,
+            style = MaterialTheme.typography.bodyMedium
+        )
+    }
+
 }
 
 @Composable
